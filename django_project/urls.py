@@ -28,7 +28,8 @@ urlpatterns = [
     url(r'^catalog/', include('catalog.urls')),
  #   url(r'^landing/', include('landing.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', RedirectView.as_view(url ='/catalog/', permanent =False))  #si c'est l'unique app utilisé
+    url(r'^api/',include('api_rest.urls')),
+   # url(r'^$', RedirectView.as_view(url ='/catalog/', permanent =False))  #si c'est l'unique app utilisé
 ]
 if settings.DEBUG is True :
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
