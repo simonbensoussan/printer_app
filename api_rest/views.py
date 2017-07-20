@@ -12,3 +12,7 @@ class CreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
         serializer.save()
+
+class  BucketlistView(generics.ListAPIView):
+    queryset = Bucketlist.objects.all()
+    serializer_class = BucketlistSerializer

@@ -1,7 +1,8 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from .models import Bucketlist
 from rest_framework.test import APIClient
 from rest_framework import status
+from .serializers import BucketlistSerializer
 from django.core.urlresolvers import reverse
 # Create your tests here.
 
@@ -31,7 +32,7 @@ class ModelTestCase(TestCase):
         self.assertEqual(str(Bucketlist._meta.verbose_name_plural), "Ma list de courses")
         
         
-    # Define this after the ModelTestCase
+# -------------------------- Define this after the ModelTestCase -------------------------------
 
 class ViewTestCase(TestCase):
     """Test suite for the api views."""
